@@ -193,6 +193,7 @@
 				TargetAttributes = {
 					65DCB7691D5CC8150080F71A = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 6UW7LJYHD4;
 					};
 					65DCB77D1D5CC8150080F71A = {
 						CreatedOnToolsVersion = 7.3;
@@ -401,10 +402,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Highway/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ratio.Highway;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -412,10 +416,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Highway/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ratio.Highway;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -484,6 +491,7 @@
 				65DCB7941D5CC8150080F71A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		65DCB7951D5CC8150080F71A /* Build configuration list for PBXNativeTarget "HighwayTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +500,7 @@
 				65DCB7971D5CC8150080F71A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		65DCB7981D5CC8150080F71A /* Build configuration list for PBXNativeTarget "HighwayUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +509,7 @@
 				65DCB79A1D5CC8150080F71A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
