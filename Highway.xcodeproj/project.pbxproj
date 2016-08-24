@@ -135,8 +135,8 @@
 				65DCB7661D5CC8150080F71A /* Sources */,
 				65DCB7671D5CC8150080F71A /* Frameworks */,
 				65DCB7681D5CC8150080F71A /* Resources */,
-				2B29838F1D6CC8D400217194 /* ShellScript */,
-				2B2983901D6CC94200217194 /* ShellScript */,
+				2B29838F1D6CC8D400217194 /* Script Build Incrementation */,
+				2B2983901D6CC94200217194 /* Script Version Incrementation */,
 			);
 			buildRules = (
 			);
@@ -255,26 +255,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2B29838F1D6CC8D400217194 /* ShellScript */ = {
+		2B29838F1D6CC8D400217194 /* Script Build Incrementation */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Script Build Incrementation";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
 		};
-		2B2983901D6CC94200217194 /* ShellScript */ = {
+		2B2983901D6CC94200217194 /* Script Version Incrementation */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 8;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Script Version Incrementation";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;
