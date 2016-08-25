@@ -16,11 +16,20 @@ fastlane_version "1.100.0"
 default_platform :ios
 
 platform :ios do
-  before_all do
-    # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
-    
-    
-  end
+
+  desc "sets build number to number of commits"
+  lane :before_integration do
+  # fetch the number of commits in the current branch
+  build_number = number_of_commits
+
+  # Set number of commits as the build number in the project's plist file before the bot actually start building the project.
+  # This way, the generated archive will have an auto-incremented build number.
+  set_info_plist_value(
+    path: './MyApp-Info.plist',
+    key: 'CFBundleVersion',
+    value: "#{build_number}"
+  )
+end
 
   desc "Runs all the tests"
   lane :test do
@@ -52,6 +61,23 @@ platform :ios do
     deliver(force: true)
     # frameit
   end
+
+  desc "runs after integration to upload to iTunes Connect"
+    lane :after_integration do
+    ipa_folder = "#{ENV['XCS_DERIVED_DATA_DIR']}/deploy/#{version_number}.#{build_number}/"
+    ipa_path = "#{ipa_folder}/#{target}.ipa"
+    sh "mkdir -p #{ipa_folder}"
+
+    # Export the IPA from the archive file created by the bot
+    sh "xcrun xcodebuild -exportArchive -archivePath \"#{ENV['XCS_ARCHIVE']}\" -exportPath \"#{ipa_path}\" -IDEPostProgressNotifications=YES -DVTAllowServerCertificates=YES -DVTSigningCertificateSourceLogLevel=3 -DVTSigningCertificateManagerLogLevel=3 -DTDKProvisioningProfileExtraSearchPaths=/Library/Developer/XcodeServer/ProvisioningProfiles -exportOptionsPlist './ExportOptions.plist'"
+
+    # Upload the build to iTunes Connect, it won't submit this IPA for review.
+    deliver(
+      force: true,
+      ipa: ipa_path
+    )
+  end
+
 
   # You can define as many lanes as you want
 
