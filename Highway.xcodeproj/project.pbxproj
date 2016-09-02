@@ -135,7 +135,6 @@
 				65DCB7661D5CC8150080F71A /* Sources */,
 				65DCB7671D5CC8150080F71A /* Frameworks */,
 				65DCB7681D5CC8150080F71A /* Resources */,
-				2B88076E1D79DD7A00CCB23F /* Build Auto-Incrementation Script */,
 			);
 			buildRules = (
 			);
@@ -252,23 +251,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2B88076E1D79DD7A00CCB23F /* Build Auto-Incrementation Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Build Auto-Incrementation Script";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-			shellPath = /bin/sh;
-			shellScript = $SRCROOT/Scripts/set_build_number.sh;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		65DCB7661D5CC8150080F71A /* Sources */ = {
